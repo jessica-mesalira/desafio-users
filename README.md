@@ -8,11 +8,13 @@ Mudanças feitas no projeto dos contatos, divido por arquivo:
 - Troca de tag do tipo de TextView para AppCompatTextView
 - Alteração de valores de espaçãmento para valores em tokens @dimens
 - Ajustes de espaçamento
+- Padronização de nomes dos IDs
 
 #### list_item_user.xml
 - Troca de tag do tipo de TextView para AppCompatTextView
 - Alteração de valores de espaçãmento para valores em tokens @dimens
 - Ajustes de espaçamento
+- - Padronização de nomes dos IDs
 
 
 
