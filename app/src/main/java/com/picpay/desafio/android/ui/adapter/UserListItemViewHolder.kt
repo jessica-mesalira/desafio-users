@@ -1,4 +1,4 @@
-package com.picpay.desafio.android.adapters.userlistadapter
+package com.picpay.desafio.android.ui.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

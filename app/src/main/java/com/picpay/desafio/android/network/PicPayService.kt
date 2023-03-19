@@ -17,7 +17,7 @@ class PicPayService {
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
-    private val service: UserService by lazy {
-        retrofit.create(UserService::class.java)
+    fun getUserService() : UserService {
+        return retrofit.create(UserService::class.java)
     }
 }

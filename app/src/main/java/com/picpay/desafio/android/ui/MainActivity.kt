@@ -7,27 +7,28 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.arch.toolkit.delegate.viewProvider
 import com.picpay.desafio.android.R
 import com.picpay.desafio.android.domain.User
-import com.picpay.desafio.android.adapters.userlistadapter.UserListAdapter
+import com.picpay.desafio.android.ui.adapter.UserListAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private var recyclerView: RecyclerView by viewProvider(R.id.rv_main_contact_list)
-    private var progressBar: ProgressBar by viewProvider(R.id.pb_user_list_progress)
-    private lateinit var adapter: UserListAdapter
+    private val recyclerView: RecyclerView by viewProvider(R.id.rv_main_contact_list)
+    private val progressBar: ProgressBar by viewProvider(R.id.pb_user_list_progress)
+    private val adapter: UserListAdapter = UserListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onResume() {
         super.onResume()
 
-        adapter = UserListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 

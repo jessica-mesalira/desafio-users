@@ -1,7 +1,9 @@
 package com.picpay.desafio.android.ui
 
-class MainActivityViewModel {
+import androidx.lifecycle.ViewModel
+import com.picpay.desafio.android.repository.UserRepository
 
-    service.getUsers()
+class MainActivityViewModel(private val userRepository: UserRepository) : ViewModel() {
+
 
 }
