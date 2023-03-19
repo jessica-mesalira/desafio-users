@@ -1,4 +1,4 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.domain
 
 import com.google.gson.annotations.SerializedName
 

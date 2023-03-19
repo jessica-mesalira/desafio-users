@@ -1,6 +1,7 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.adapters.userlistadapter
 
 import androidx.recyclerview.widget.DiffUtil
+import com.picpay.desafio.android.domain.User
 
 class UserListDiffCallback() : DiffUtil.ItemCallback<User>() {
 

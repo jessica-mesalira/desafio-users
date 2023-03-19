@@ -1,8 +1,10 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.adapters.userlistadapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import com.picpay.desafio.android.R
+import com.picpay.desafio.android.domain.User
 
 class UserListAdapter : ListAdapter<User, UserListItemViewHolder>(UserListDiffCallback()) {
 

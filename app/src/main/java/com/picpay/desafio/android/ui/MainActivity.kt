@@ -1,4 +1,4 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.ui
 
 import android.os.Bundle
 import android.view.View
@@ -7,56 +7,25 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import okhttp3.OkHttpClient
+import com.picpay.desafio.android.R
+import com.picpay.desafio.android.domain.User
+import com.picpay.desafio.android.adapters.userlistadapter.UserListAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var progressBar: ProgressBar
+    private var recyclerView: RecyclerView by viewProvider(R.id.rv_main_contact_list)
+    private var progressBar: ProgressBar by viewProvider(R.id.pb_user_list_progress)
     private lateinit var adapter: UserListAdapter
-
-    private val url = "https://609a908e0f5a13001721b74e.mockapi.io/picpay/api/"
-
-    private val gson: Gson by lazy { GsonBuilder().create() }
-
-    private val okHttp: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .build()
-    }
-
-    private val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(url)
-            .client(okHttp)
-            .addConverterFactory(GsonConverterFactory.create(gson))
-            .build()
-    }
-
-    private val service: PicPayService by lazy {
-        retrofit.create(PicPayService::class.java)
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putString("response", "OK")
-    }
-
     override fun onResume() {
         super.onResume()
-
-        recyclerView = findViewById(R.id.rv_main_contact_list)
-        progressBar = findViewById(R.id.pb_user_list_progress)
 
         adapter = UserListAdapter()
         recyclerView.adapter = adapter
