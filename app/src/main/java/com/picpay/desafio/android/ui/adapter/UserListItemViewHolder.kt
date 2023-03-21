@@ -17,9 +17,7 @@ class UserListItemViewHolder(
 
     private val tvNameUser : AppCompatTextView by viewProvider(R.id.tv_item_name)
     private val tvUsernameUser : AppCompatTextView by viewProvider(R.id.tv_item_username)
-    private val pbProgressBarUser : ProgressBar by viewProvider(
-        R.id.pb_item_progress_bar_image
-    )
+    private val pbProgressBarUser : ProgressBar by viewProvider(R.id.pb_item_progress_bar)
     private val ciImageUser : CircleImageView by viewProvider(R.id.ci_item_picture)
 
     fun bind(user: User) {

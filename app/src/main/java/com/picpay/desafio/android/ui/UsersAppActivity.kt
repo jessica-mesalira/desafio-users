@@ -1,8 +1,5 @@
 package com.picpay.desafio.android.ui
 
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
@@ -15,12 +12,12 @@ import com.picpay.desafio.android.R
 import com.picpay.desafio.android.ui.adapter.UserListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class UsersAppActivity : AppCompatActivity(R.layout.activity_users_app) {
 
     private val recyclerView: RecyclerView by viewProvider(R.id.rv_app_user_list)
     private val progressBar: ProgressBar by viewProvider(R.id.pb_user_list_progress)
     private val adapter: UserListAdapter = UserListAdapter()
-    private val usersViewModel: MainActivityViewModel by viewModel()
+    private val usersViewModel: UsersAppViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +41,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         progressBar.visibility = View.GONE
         recyclerView.visibility = View.GONE
 
-        Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@UsersAppActivity, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun setupViews() {

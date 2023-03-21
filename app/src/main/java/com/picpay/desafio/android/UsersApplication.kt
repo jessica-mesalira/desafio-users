@@ -7,7 +7,7 @@ import com.picpay.desafio.android.di.viewModels
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class ContactsApplication : Application() {
+class UsersApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setupKoin()
@@ -15,7 +15,7 @@ class ContactsApplication : Application() {
 
     private fun setupKoin() {
         startKoin {
-            androidContext(this@ContactsApplication)
+            androidContext(this@UsersApplication)
             modules(
                 listOf(
                     network,

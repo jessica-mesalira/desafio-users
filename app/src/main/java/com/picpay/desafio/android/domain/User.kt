@@ -3,12 +3,12 @@ package com.picpay.desafio.android.domain
 import com.google.gson.annotations.SerializedName
 
 class User(
-    @SerializedName("img")
-    val img: String,
-    @SerializedName("name")
-    val name: String,
     @SerializedName("id")
     val id: Int,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("username")
-    val username: String
+    val username: String,
+    @SerializedName("img")
+    val img: String
 )
