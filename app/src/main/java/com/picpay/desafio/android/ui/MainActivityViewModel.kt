@@ -5,5 +5,6 @@ import com.picpay.desafio.android.repository.UserRepository
 
 class MainActivityViewModel(private val userRepository: UserRepository) : ViewModel() {
 
+    fun getUsers() = userRepository.getUsers()
 
 }

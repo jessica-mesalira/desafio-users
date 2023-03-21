@@ -1,7 +1,9 @@
 package com.picpay.desafio.android
 
 import android.app.Application
-import com.picpay.desafio.android.di.user
+import com.picpay.desafio.android.di.network
+import com.picpay.desafio.android.di.repositories
+import com.picpay.desafio.android.di.viewModels
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -14,7 +16,13 @@ class ContactsApplication : Application() {
     private fun setupKoin() {
         startKoin {
             androidContext(this@ContactsApplication)
-            modules(user)
+            modules(
+                listOf(
+                    network,
+                    repositories,
+                    viewModels
+                )
+            )
         }
     }
 
