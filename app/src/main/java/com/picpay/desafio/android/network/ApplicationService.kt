@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class PicPayService {
+class ApplicationService {
 
     private val gson: Gson = GsonBuilder().create()
     private val okHttp: OkHttpClient = OkHttpClient.Builder().build()

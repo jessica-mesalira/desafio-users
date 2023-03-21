@@ -1,6 +1,6 @@
 package com.picpay.desafio.android.di
 
-import com.picpay.desafio.android.network.PicPayService
+import com.picpay.desafio.android.network.ApplicationService
 import com.picpay.desafio.android.repository.UserRepository
 import com.picpay.desafio.android.ui.MainActivityViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -15,5 +15,5 @@ val repositories = module {
 }
 
 val network = module {
-    single { PicPayService().getUserService() }
+    single { ApplicationService().getUserService() }
 }
