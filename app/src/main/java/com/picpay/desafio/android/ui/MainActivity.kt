@@ -25,8 +25,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupViews()
+        setupObservables()
+    }
+
+    private fun setupObservables() {
         usersViewModel.getUsers().observe(this) {
-            loading { setLoading() }
             data {
                 progressBar.visibility = View.GONE
                 adapter.submitList(it)
@@ -44,11 +47,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun setLoading() {
-        progressBar.visibility = View.VISIBLE
-    }
-
     private fun setupViews() {
+        progressBar.visibility = View.VISIBLE
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
