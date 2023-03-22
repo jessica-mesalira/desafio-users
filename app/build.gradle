@@ -27,6 +27,16 @@ android {
         }
     }
 
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+        exclude "/attach_hotspot_windows.dll"
+        exclude "META-INF/licenses/"
+        exclude "META-INF/AL2.0"
+        exclude "META-INF/LGPL2.1"
+        exclude "META-INF/LICENSE.md"
+        exclude "META-INF/LICENSE-notice.md"
+    }
+
     compileOptions {
         sourceCompatibility 1.8
         targetCompatibility 1.8
@@ -82,8 +92,9 @@ dependencies {
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.mockito:mockito-core:$mockito_version"
-    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_kotlin_version"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version"
     testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    testImplementation "com.jraska.livedata:testing-ktx:1.1.0"
     implementation "org.koin:koin-test:$koin_version"
 
     //arch-toolkit
@@ -96,11 +107,12 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "androidx.annotation:annotation:1.6.0"
     implementation "androidx.appcompat:appcompat:1.6.1"
-    implementation "androidx.window:window:1.0.0"
 
     //Coil
     implementation "io.coil-kt:coil:2.2.2"
 
+    androidTestImplementation "io.mockk:mockk-android:1.13.4"
+    androidTestImplementation "io.mockk:mockk-agent:1.13.4"
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
     androidTestImplementation "androidx.test:core-ktx:$core_ktx_test_version"
