@@ -1,7 +1,6 @@
 package com.picpay.desafio.android.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.arch.toolkit.delegate.viewProvider
 import com.picpay.desafio.android.R
-import com.picpay.desafio.android.di.viewModels
 import com.picpay.desafio.android.ui.adapter.UserListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.net.UnknownHostException
