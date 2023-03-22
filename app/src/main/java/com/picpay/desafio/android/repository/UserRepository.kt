@@ -1,7 +1,7 @@
 package com.picpay.desafio.android.repository
 
+import android.util.Log
 import br.com.arch.toolkit.livedata.response.MutableResponseLiveData
-import br.com.arch.toolkit.livedata.response.ResponseLiveData
 import com.picpay.desafio.android.domain.User
 import com.picpay.desafio.android.network.UserService
 import kotlinx.coroutines.CoroutineScope
@@ -13,9 +13,8 @@ val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
 class UserRepository(private val userService: UserService) {
 
-    fun getUsers() : ResponseLiveData<List<User>> {
-        val userLiveData = MutableResponseLiveData<List<User>>()
-
+    fun getUsers(userLiveData: MutableResponseLiveData<List<User>>) {
+        Log.i("Jessica", "Fez request")
         userLiveData.postLoading()
         scope.launch {
             try {
@@ -24,7 +23,6 @@ class UserRepository(private val userService: UserService) {
                 userLiveData.postError(e)
             }
         }
-        return userLiveData
     }
 
 }
