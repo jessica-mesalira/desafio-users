@@ -1,4 +1,4 @@
-# PicPay - Desafio Android
+# Desafio Android
 
 Mudanças feitas no projeto dos contatos:
 
